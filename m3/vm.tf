@@ -10,7 +10,7 @@ vm_size = "Standard_DS1_v2"
  storage_image_reference {
   publisher = "Canonical"
   offer     = "UbuntuServer"
-  sku       = "20.04-LTS"
+  sku       = "16.04-LTS"
   version   = "latest"
 }
   
