@@ -6,9 +6,18 @@ location = azurerm_resource_group.rg.location
 resource_group_name = azurerm_resource_group.rg.name
 network_interface_ids = [azurerm_network_interface.nic.id]
 vm_size = "Standard_DS1_v2"
-storage_image_reference {
-id = data.azurerm_image.image.id
+
+ storage_image_reference {
+  publisher = "Canonical"
+  offer     = "UbuntuServer"
+  sku       = "20.04-LTS"
+  version   = "latest"
 }
+  
+# storage_image_reference {
+# id = data.azurerm_image.image.id
+# }
+  
 storage_os_disk {
 name = "nginx1-os-disk"
 #vhd_uri = "${azurerm_storage_account.storage.primary_blob_endpoint}/nginx1-os-disk.vhd"
