@@ -1,4 +1,4 @@
-SECURITY GROUPS
+# SECURITY GROUPS
 
 resource "azurerm_network_security_group" "nginx-sg" {
 name = "nginx_sg"
@@ -17,4 +17,5 @@ destination_port_range = "80"
 source_address_prefix = ""
 destination_address_prefix = "*"
 network_security_group_name = azurerm_network_security_group.nginx-sg.name
+resource_group_name = azurerm_resource_group.rg.name
 }

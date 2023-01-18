@@ -11,9 +11,10 @@ id = data.azurerm_image.image.id
 }
 storage_os_disk {
 name = "nginx1-os-disk"
-vhd_uri = "${azurerm_storage_account.storage.primary_blob_endpoint}/nginx1-os-disk.vhd"
+#vhd_uri = "${azurerm_storage_account.storage.primary_blob_endpoint}/nginx1-os-disk.vhd"
 caching = "ReadWrite"
 create_option = "FromImage"
+managed_disk_type = "Standard_LRS"
 }
 os_profile {
 computer_name = "nginx1"
